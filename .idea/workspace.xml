@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc69bb05-43a0-4cb2-bb6e-48fba7e79001" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/ExceptionEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyThreadEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyThreadEx1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CollectionDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GenericsList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ListEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MapDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SetDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Synchronized.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663903693901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit">
+      <created>1665854816247</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665854816247</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
