@@ -1,11 +1,11 @@
 package java8;
 
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.Arrays;
+import java.util.List;
 
 public class StreamEx {
     public static void main(String[] args) {
-        List<Integer> li = Arrays.asList(1, 2, 3, 3, 5, 2, 7, 11, 6);
+        List<Integer> li = Arrays.asList(11, 2, 3, 3, 5, 2, 7, 11, 6);
         /*
         Random random=new Random(100);
         random.ints().limit(8).forEach(System.out::println);*/
@@ -101,9 +101,19 @@ public class StreamEx {
         //li.stream().filter(StreamEx::isPrime).forEach(System.out::println);
 
         //check if list contains 3
-        li.stream().anyMatch(num -> String.valueOf(num).contains("7")) ;
+        //li.stream().anyMatch(num -> String.valueOf(num).contains("7")) ;
 
-}
+        //return a list of those numbers squared and the product added to 10, omitting any of the resulting
+        // numbers that end in 5 or 6.
+       /* li.stream().map(i->(i*i)+10).map(i->i+"").filter(i->!(i.endsWith("5") || i.endsWith("6")))
+                .toList().forEach(System.out::println);*/
+
+        //find first element in list
+        Integer integer = li.stream().findFirst().get();
+        System.out.println(integer);
+        System.out.println(integer.floatValue());
+
+    }
 
     public static boolean isPrime(int number) {
         if (number <= 1) {

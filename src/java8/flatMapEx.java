@@ -1,7 +1,5 @@
 package java8;
 
-import java.util.*;
-
 public class flatMapEx {
     public static void main(String[] args) {
 
@@ -23,30 +21,25 @@ public class flatMapEx {
         List<Integer> collect = listOfLists.stream().flatMap(Collection::stream).collect(Collectors.toList());
         System.out.println(collect);*/
 
-        //list of strings and split each string into individual words. We then flatten the resulting
-        // stream of words into a single stream of strings.
-       /* List<String> listOfStrings = Arrays.asList(
-                "Hello World",
-                "Welcome to Java 8",
-                "Stream FlatMap Example"
-        );
+        //list of list of strings, then flatten the resultingstr eam of words into a single stream of strings.
+       /* List<List<String>> fruits = new ArrayList<>();
+        fruits.add(Arrays.asList("apple", "banana", "apple", "orange"));
+        fruits.add(Arrays.asList("grape", "apple", "kiwi"));
+        fruits.add(Arrays.asList("apple", "orange", "pear", "apple"));
 
-        listOfStrings.stream().map(str->str.split(" ")).flatMap(li-> Arrays.stream(li))
-                .collect(Collectors.toList());
-        System.out.println(listOfStrings);*/
+        List<String> fruitsList = fruits.stream().flatMap(Collection::stream).collect(Collectors.toList());
+        System.out.println(fruitsList);*/
 
-        //list of strings containing words, find the total number of characters in all the words.
-        /*List<String> listOfStrings = Arrays.asList(
-                "Hello World",
-                "Welcome to Java 8",
-                "Stream FlatMap Example"
-        );
-        int sum = listOfStrings.stream().flatMap(word -> Arrays.stream(word.split("")))
-                .mapToInt(li -> li.length()).sum();
+        //list of list of strings containing words, find the total number of characters in all the words.
+       /* List<List<String>> nestedList = new ArrayList<>();
+        nestedList.add(Arrays.asList("apple", "banana", "apple", "orange"));
+        nestedList.add(Arrays.asList("grape", "apple", "kiwi"));
+        nestedList.add(Arrays.asList("apple", "orange", "pear", "apples"));
+        int sum = nestedList.stream().flatMap(Collection::stream).mapToInt(String::length).sum();
         System.out.println(sum);*/
 
         //list of lists of integers, write a program to find the maximum value in the entire nested list.
-        List<List<Integer>> nestedList = new ArrayList<>();
+       /* List<List<Integer>> nestedList = new ArrayList<>();
         nestedList.add(Arrays.asList(1, 2, 3));
         nestedList.add(Arrays.asList(4, 5));
         nestedList.add(Arrays.asList(6, 7, 8, 9));
@@ -54,8 +47,27 @@ public class flatMapEx {
 
         int maxNum = nestedList.stream().flatMap(Collection::stream)
                 .max(Comparator.comparingInt(a -> a)).orElse(0);
-        System.out.println(maxNum);
+        System.out.println(maxNum);*/
 
+        //list of strings, write a program to find all unique characters from all the strings combined
+       /* List<List<String>> nestedList = new ArrayList<>();
+        nestedList.add(Arrays.asList("apple", "banana", "apple", "orange"));
+        nestedList.add(Arrays.asList("grape", "apple", "kiwi"));
+        nestedList.add(Arrays.asList("apple", "orange", "pear", "apple"));
+
+        List<String> unique = nestedList.stream().flatMap(Collection::stream).distinct().collect(Collectors.toList());
+        System.out.println(unique);*/
+
+        // list of lists of strings, write a program to find the number of occurrences of
+        // specific word in the entire nested list and sort in asc
+        /*List<List<String>> nestedList = new ArrayList<>();
+        nestedList.add(Arrays.asList("apple", "banana", "apple", "orange"));
+        nestedList.add(Arrays.asList("grape", "apple", "kiwi"));
+        nestedList.add(Arrays.asList("apple", "orange", "pear", "apple"));
+
+        nestedList.stream().flatMap(Collection::stream).collect(Collectors.groupingBy
+                        (String::toString, Collectors.counting())).entrySet().stream()
+                .sorted(Map.Entry.comparingByValue()).forEach(System.out::println);*/
 
 
     }

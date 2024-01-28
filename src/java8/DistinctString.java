@@ -1,10 +1,8 @@
 package java8;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.Collections;
+import java.util.List;
 
 public class DistinctString {
     public static void main(String[] args) {
@@ -12,13 +10,17 @@ public class DistinctString {
 
         Arrays.stream(s).filter(i->i.equals("durgesh")).collect(Collectors.toList()).
                 forEach(System.out::println);*/
-        String s="fdjjvdddnsdd";
+        String s="fdjjvdddnssdd";
 
-        Map<Character, Long> s1 = s.chars().mapToObj(c -> (char) c)
+       /* Map<Character, Long> s1 = s.chars().mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(s1);*/
 
-        System.out.println(s1);
-
+        //Given a string find out duplicate character and its count
+        /*Map<String, Long> collect = Arrays.stream(s.split("")).collect(Collectors.groupingBy(Function.identity(),
+                        Collectors.counting())).entrySet().stream().filter(i -> i.getValue() > 1)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        System.out.println(collect);*/
 
        /* String s="fdjjvdddnsdd";
 
@@ -31,7 +33,7 @@ public class DistinctString {
                 filter(i -> i.getValue() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         System.out.println(s2);*/
 
-       /* String a="Hello world Hello world this is a class";
+       /* String a="qa.Hello world qa.Hello world this is a class";
 
         Map<String,Integer> mp=new HashMap<>();
 
@@ -44,7 +46,7 @@ public class DistinctString {
         System.out.println(mp2);
 */
 
-       // String s="Hello i am a  book  asem";
+       // String s="qa.Hello i am a  book  asem";
        /* long count = Arrays.stream(s.split(" ")).filter(x -> x.isEmpty()).count();
         System.out.println(count);
 
@@ -58,10 +60,14 @@ public class DistinctString {
                 .collect(Collectors.joining(", "));
         System.out.println(collect);*/
 
-        Arrays.stream(s.split(" ")).map(String::toLowerCase).collect(Collectors.toList())
+        /*Arrays.stream(s.split(" ")).map(String::toLowerCase).collect(Collectors.toList())
                 .forEach(System.out::println);
 
         Arrays.stream(s.split(" ")).map(i->i.toUpperCase()).collect(Collectors.toList())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
+
+        List<String> words = Arrays.asList(s.trim().split("\\s+"));
+        Collections.reverse(words);
+        System.out.println(String.join(" ", words));
     }
 }

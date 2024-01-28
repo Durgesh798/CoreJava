@@ -1,9 +1,8 @@
 package java8;
 
-import java.util.*;
-import java.util.function.Function;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamEx1 {
 
@@ -96,7 +95,9 @@ public class StreamEx1 {
         /*int sum = fruits.stream().filter(i -> i.length() > 5).mapToInt(i -> i.length()).sum();
         System.out.println(sum);*/
 
-        //
+        //return a list of the strings, omitting any string that contains a "p".
+        fruits.stream().filter(f->!(f.toLowerCase().contains("p")))
+                .collect(Collectors.toList()).forEach(System.out::println);
 
     }
 

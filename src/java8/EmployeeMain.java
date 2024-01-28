@@ -8,6 +8,7 @@ public class EmployeeMain {
 
         Employees emp=new Employees();
         List<Employees> empList = emp.getEmpList();
+       // System.out.println(empList);
 
         //list to map
        /* Map<String, List<Employees>> emp = empList.stream().
@@ -169,6 +170,10 @@ public class EmployeeMain {
                 .map(Map.Entry::getKey).orElse("null");
         System.out.println(aNull);*/
 
+        //sort on empid descending
+        //empList.stream().sorted(Comparator.comparing(Employees::getEmpId).reversed()).forEach(System.out::println);
+
+        empList.parallelStream().forEach(employees -> new Thread());
 
     }
 
